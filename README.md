@@ -31,10 +31,11 @@ See the game live [HERE](https://aayushsrivastava9760.github.io/TicTacToebyAayus
 ## Whats more !!
 
 1. Working on a feature which would give the option to the players who gets to go first ( under development will be soon added ) .
-2. Adding better transitions between the pages .
-3. Dark/Light mode .
-4. Adding options to select different themes .
-5. Adding audio's and random messages .
+2. Adding proper instructions .
+3. Adding better transitions between the pages .
+4. Dark/Light mode .
+5. Adding options to select different themes .
+6. Adding audio's and random messages .
 
 ### Future scope 
 
