@@ -1,0 +1,13 @@
+.hello{
+    color:blue;
+}
+
+@tailwind base;
+@tailwind components;
+
+.btn{
+    @apply inline-block px-5 py-3 shadow-lg rounded-lg bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-0.5 transform transition text-white uppercase tracking-wider font-semibold text-sm sm:text-base;
+
+}
+
+@tailwind utilities;
