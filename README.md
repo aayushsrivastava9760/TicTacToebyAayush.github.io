@@ -35,7 +35,7 @@ See the game live [HERE](https://aayushsrivastava9760.github.io/TicTacToebyAayus
 3. Adding better transitions between the pages .
 4. Dark/Light mode .
 5. Adding options to select different themes .
-6. Adding audio's and random messages .
+6. Adding audios and random messages .
 
 ### Future scope 
 
