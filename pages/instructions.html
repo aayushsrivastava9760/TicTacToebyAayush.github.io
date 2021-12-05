@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head lang="en">
+    <title>Tic Tac Toe</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../build/tailwind.css" rel="stylesheet">
+</head>
+<body class="bg-black">
+    <div class="grid grid-cols-4">
+        <div class="col-span-1"></div>
+        <div class="px-8 py-4 col-span-2 flex flex-col items-center justify-center space-y-10">
+            <h1 class="text-8xl font-semibold text-blue-800 font-sans select-none">Tic Tac Toe</h1>
+            <div>
+                <p class="text-4xl text-white font-sans">
+                    1. The game is played on a grid that's 3 squares by 3 squares.
+                </p>
+                <p class="text-4xl text-white font-sans my-4">
+                    2. You are X, your friend is O. Players take turns putting their marks in empty squares.
+                </p>
+                <p class="text-4xl text-white font-sans my-4">
+                    3. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
+                </p>
+                <p class="text-4xl text-white font-sans my-4">
+                    4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.
+                </p>
+            </div>
+            <div> 
+                <a class="inline-block px-10 py-7 shadow-lg rounded-lg bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-0.5 transform transition text-white uppercase tracking-wider font-semibold text-sm sm:text-base" href="../index.html">Back</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
