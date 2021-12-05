@@ -23,9 +23,9 @@ The instructions are added and can be accessed by clicking on the instructions b
 See the game live [HERE](https://aayushsrivastava9760.github.io/TicTacToebyAayush.github.io/) :love_you_gesture:
 
 
-<img align="left" src="https://user-images.githubusercontent.com/81965095/136322586-7817a277-e405-45ec-b42a-0d1630395fcd.jpeg" alt="mainmenu" width="477" height="377" />
+<img align="left" src="https://user-images.githubusercontent.com/81965095/136322586-7817a277-e405-45ec-b42a-0d1630395fcd.jpeg" alt="mainmenu" width="480" height="380" />
 
-<img align="right" src="https://user-images.githubusercontent.com/81965095/136322673-26e9c560-3777-4475-b3b9-8eaa7eb339f9.jpeg" alt="mainmenu" width="477" height="377" />
+<img align="right" src="https://user-images.githubusercontent.com/81965095/136322673-26e9c560-3777-4475-b3b9-8eaa7eb339f9.jpeg" alt="mainmenu" width="480" height="380" />
 
 <!-- ![mainmenu](https://user-images.githubusercontent.com/81965095/136322586-7817a277-e405-45ec-b42a-0d1630395fcd.jpeg)
 ![names](https://user-images.githubusercontent.com/81965095/136322645-2d8dd4bb-e79c-465e-b383-363cacd70518.jpeg)
