@@ -210,163 +210,100 @@ blocks[8].addEventListener('click',function(){
 });
 
 
-const min = (a,b) =>{
-    if(a>b) return b;
-    else return a;
-}
 
-const max = (a,b) =>{
-    if(a>b) return a;
-    else return b;
+
+const emptyBoxes = (board) =>{
+    return board.filter(box => box !== 'X' && box !== 'O')
 }
 
 
-const isMovesLeft = (block) =>{
-	for (let i = 0; i<9; i++) if (block[i]==='') return true;
-	return false;
+const winning = (board,player) =>{
+    if (
+        (board[0] == player && board[1] == player && board[2] == player) ||
+        (board[3] == player && board[4] == player && board[5] == player) ||
+        (board[6] == player && board[7] == player && board[8] == player) ||
+        (board[0] == player && board[3] == player && board[6] == player) ||
+        (board[1] == player && board[4] == player && board[7] == player) ||
+        (board[2] == player && board[5] == player && board[8] == player) ||
+        (board[0] == player && board[4] == player && board[8] == player) ||
+        (board[2] == player && board[4] == player && board[6] == player)
+        ) {
+        return true;
+        } else {
+        return false;
+    }
 }
 
+const minimax = (newBoard,player) =>{
+    let availBoxes = emptyBoxes(newBoard)
 
-const evaluate = (block) =>{
-    for(let i=0;i<cases.length;i+=3){
+    if(winning(newBoard,playerSym)) return {score:-10}
+    else if(winning(newBoard,botSym)) return {score:+10}
+    else if(availBoxes.length === 0) return {score:0}
 
-		if(   (  (  block[Number(cases[i])]  ===  block[Number(cases[i+1])]     )    &&   (   block[Number(cases[i+1])] === block[Number(cases[i+2])]     )  )     &&      (block[Number(cases[i])]  !== ''  )      ){
-			if(block[i] === botSym) return +10;
-			else if(block[i] === playerSym) return -10;
-		}
+    let moves = []
 
-	}
+    for(let i=0;i<availBoxes.length;i++){
+        let move ={}
+        move.index = newBoard[availBoxes[i]];
 
-    return 0;
-}
+    
+        newBoard[availBoxes[i]] = player;
 
+    
+        if (player == botSym){
+        let result = minimax(newBoard, playerSym);
+        move.score = result.score;
+        }
+        else{
+        let result = minimax(newBoard, botSym);
+        move.score = result.score;
+        }
 
-const minimax = (block,depth,isMax) =>{
-    let score = evaluate(block);
-
-	// evaluated score
-	if (score === 10)
-		return score;
-
-	// If Minimizer has won the game return his/her
-	// evaluated score
-	if (score === -10)
-		return score;
-
-	// If there are no more moves and no winner then
-	// it is a tie
-	if (isMovesLeft(block)===false)
-		return 0;
-
-	// If this maximizer's move
-	if (isMax)
-	{
-		let best = -1000;
-
-		// Traverse all cells
-		for (let i = 0; i<9; i++)
-		{
-			
-				// Check if cell is empty
-				if (block[i]==='')
-				{
-					// Make the move
-					block[i] = botSym;
-
-					// Call minimax recursively and choose
-					// the maximum value
-					best = max( best,
-						minimax(block, depth+1, !isMax) );
-
-					// Undo the move
-					block[i] = '';
-				}
-			
-		}
-		return best;
-	}
-
-	// If this minimizer's move
-	else
-	{
-		let best = 1000;
-
-		// Traverse all cells
-		for (let i = 0; i<9; i++)
-		{
-			
-				// Check if cell is empty
-				if (block[i]=='')
-				{
-					// Make the move
-					block[i] = playerSym;
-
-					// Call minimax recursively and choose
-					// the minimum value
-					best = min(best,
-						minimax(block, depth+1, !isMax));
-
-					// Undo the move
-					block[i] = '';
-				}
-			
-		}
-		return best;
-	}
-}
-
-
-const findBestMove = (block) =>{
-
-    let bestVal = -1000
-    let bestMove = -1
-
-    for(let i=0;i<9;i++){
-        if (block[i]=='')
-			{
-				// Make the move
-				block[i] = botSym;
-
-				// compute evaluation function for this
-				// move.
-				let moveVal = minimax(block, 0, false);
-
-				// Undo the move
-				block[i] = '';
-
-				// If the value of the current move is
-				// more than the best value, then update
-				// best/
-				if (moveVal > bestVal)
-				{
-					bestMove = i;
-					bestVal = moveVal;
-				}
-			}
+        newBoard[availBoxes[i]] = move.index;
+    
+        moves.push(move);
     }
 
-    return bestMove;
+    let bestMove;
+  if(player === botSym){
+    let bestScore = -10000;
+    for(let i = 0; i < moves.length; i++){
+      if(moves[i].score > bestScore){
+        bestScore = moves[i].score;
+        bestMove = i;
+      }
+    }
+  }else{
+
+
+    let bestScore = 10000;
+    for(let i = 0; i < moves.length; i++){
+      if(moves[i].score < bestScore){
+        bestScore = moves[i].score;
+        bestMove = i;
+      }
+    }
+  }
+
+  return moves[bestMove];
+
 }
 
 
-function botTurn(){
-    
-    let block = [
-        blocks[0].textContent ,
-        blocks[1].textContent ,
-        blocks[2].textContent ,
-        blocks[3].textContent ,
-        blocks[4].textContent ,
-        blocks[5].textContent ,
-        blocks[6].textContent ,
-        blocks[7].textContent ,
-        blocks[8].textContent 
-    ]
-    
-    let bestMove = findBestMove(block)
-    console.log(bestMove);
-    blocks[bestMove].textContent = botSym
+const botTurn = () =>{
+    let board = [0,1,2,3,4,5,6,7,8]
+
+    for(let i=0;i<9;i++){
+        if(blocks[i].textContent !== '') board[i] = blocks[i].textContent
+    }
+
+    let bestSpot = minimax(board,botSym).index
+    console.log(bestSpot);
+
+    blocks[bestSpot].textContent = botSym
     turn=0;
     check()
+
 }
 
