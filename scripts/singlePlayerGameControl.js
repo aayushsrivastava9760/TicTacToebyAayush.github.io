@@ -1,6 +1,9 @@
 //grid blocks const
 const blocks = document.getElementsByClassName("inline-block w-24 h-24 px-8 py-7 shadow-lg rounded-lg bg-indigo-700 text-center text-4xl font-semibold border-4 border-black hover:bg-indigo-400");
 
+
+const resetBtn = document.getElementById('reset')
+
 //player names const
 const para = document.querySelectorAll('h2');
 
@@ -35,6 +38,30 @@ function turnInit(){
         botTurn();
     }
 }
+
+
+resetBtn.onclick = function(){
+
+    win=0;
+    turn = localStorage.getItem('PlayerTurn')==='first' ? 0 : 1
+
+    teller[0].textContent = "Your Turn";
+    teller[1].textContent = "Your Turn";
+    for(let i=0;i<blocks.length;i++){
+        blocks[i].textContent ="";
+        blocks[i].style.pointerEvents = 'auto';
+    }
+
+    if(turn==0){
+        teller[0].setAttribute('class','text-3xl font-semibold pt-6 text-white');
+        teller[1].setAttribute('class','text-3xl font-semibold pt-6 text-black');
+    }
+    else{
+        botTurn()
+    }
+
+}
+
 
 
 //checking winning cases
