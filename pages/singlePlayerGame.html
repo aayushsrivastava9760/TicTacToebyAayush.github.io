@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head lang="en">
+    <title>Tic Tac Toe</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../build/tailwind.css" rel="stylesheet">
+</head>
+<body class="bg-black">
+    <div class="grid grid-cols-4">
+        <div class="col-span-1 px-8 py-4 flex flex-col items-center justify-center space-y-16">
+            <h2 class="text-4xl font-semibold pt-6 text-red-500">Player</h2>
+            <h3 id="score1" class="text-4xl font-semibold pt-6 text-white">0</h3>
+            <h4 class="text-3xl font-semibold pt-6 text-white">Your Turn</h3>
+        </div>
+        <div class="px-8 py-4 col-span-2 flex flex-col items-center justify-center space-y-16">
+            <h1 class="text-8xl font-semibold text-blue-800 font-sans select-none">Tic Tac Toe</h1>
+            <div class="text-white grid grid-cols-3 place-content-center">
+                <div id="1" class="inline-block w-24 h-24 px-8 py-7 shadow-lg rounded-lg bg-indigo-700 text-center text-4xl font-semibold border-4 border-black hover:bg-indigo-400"></div>
+                <div id="2" class="inline-block w-24 h-24 px-8 py-7 shadow-lg rounded-lg bg-indigo-700 text-center text-4xl font-semibold border-4 border-black hover:bg-indigo-400"></div>
+                <div id="3" class="inline-block w-24 h-24 px-8 py-7 shadow-lg rounded-lg bg-indigo-700 text-center text-4xl font-semibold border-4 border-black hover:bg-indigo-400"></div>
+                <div id="4" class="inline-block w-24 h-24 px-8 py-7 shadow-lg rounded-lg bg-indigo-700 text-center text-4xl font-semibold border-4 border-black hover:bg-indigo-400"></div>
+                <div id="5" class="inline-block w-24 h-24 px-8 py-7 shadow-lg rounded-lg bg-indigo-700 text-center text-4xl font-semibold border-4 border-black hover:bg-indigo-400"></div>
+                <div id="6" class="inline-block w-24 h-24 px-8 py-7 shadow-lg rounded-lg bg-indigo-700 text-center text-4xl font-semibold border-4 border-black hover:bg-indigo-400"></div>
+                <div id="7" class="inline-block w-24 h-24 px-8 py-7 shadow-lg rounded-lg bg-indigo-700 text-center text-4xl font-semibold border-4 border-black hover:bg-indigo-400"></div>
+                <div id="8" class="inline-block w-24 h-24 px-8 py-7 shadow-lg rounded-lg bg-indigo-700 text-center text-4xl font-semibold border-4 border-black hover:bg-indigo-400"></div>
+                <div id="9" class="inline-block w-24 h-24 px-8 py-7 shadow-lg rounded-lg bg-indigo-700 text-center text-4xl font-semibold border-4 border-black hover:bg-indigo-400"></div>
+            </div>
+            <div class="flex items-center justify-center">
+                <div>
+                    <button id="reset" class="inline-block w-36 px-10 py-7 shadow-lg rounded-lg border-4 border-black bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-0.5 transform transition text-white uppercase tracking-wider font-semibold text-sm sm:text-base">Reset</button>
+                </div>
+                <div>   
+                    <a id="restart" class="inline-block w-36 px-10 py-7 shadow-lg rounded-lg border-4 border-black bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-0.5 transform transition text-white uppercase tracking-wider font-semibold text-sm sm:text-base" href="singlePlayerGame.html">Restart</a>
+                </div>
+                <div>  
+                    <a class="inline-block w-36 px-10 py-7 shadow-lg rounded-lg border-4 border-black bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-0.5 transform transition text-white uppercase tracking-wider font-semibold text-sm sm:text-base" href="../index.html">Main</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-span-1 px-8 py-4 flex flex-col items-center justify-center space-y-16">
+            <h2 class="text-4xl font-semibold pt-6 text-red-500">BOT</h2>
+            <h3 id="score2" class="text-4xl font-semibold pt-6 text-white">0</h3>
+            <h4 class="text-3xl font-semibold pt-6 text-black">Your Turn</h3>
+        </div>    
+    </div>
+    <script src="../scripts/singlePlayerGameControl.js"></script>
+</body>
+</html>

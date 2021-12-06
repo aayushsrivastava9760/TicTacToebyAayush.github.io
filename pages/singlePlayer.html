@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head lang="en">
+    <title>Tic Tac Toe</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../build/tailwind.css" rel="stylesheet">
+</head>
+<body class="bg-black">
+    <div class="grid grid-cols-4">
+        <div class="col-span-1"></div>
+        <div class="px-8 py-4 col-span-2 flex flex-col items-center justify-center space-y-16">
+            <h1 class="text-8xl font-semibold text-blue-800 font-sans select-none">Tic Tac Toe</h1>
+            <div>
+                <label for="name" class="text-white text-3xl">Player please enter your name: </label>
+                <input id="name" type="text" placeholder="Player" class="focus:outline-none focus:ring focus:border-blue-800 h-9"/>
+            </div>
+            <div class="items-starts flex items-stretch space-x-6">
+                <p class="text-white text-3xl">Player select your symbol: </p>
+                <button id="symbol X" class="text-white text-4xl p-2 font-semibold bg-green-500 w-16 border-4 border-black hover:border-blue-500 ">X</button>
+                <button id="symbol O" class="text-white text-4xl p-2 font-semibold bg-green-500 w-16 border-4 border-black hover:border-blue-500">O</button>
+            </div>
+            <div class="items-starts flex items-stretch space-x-6">
+                <button id="first" class="text-white text-4xl p-2 font-semibold bg-red-500 w-36 hover:bg-red-400 border-4 border-black">Go First</button>
+                <button id="second" class="text-white text-4xl p-2 font-semibold bg-blue-500 w-36 hover:bg-blue-400 border-4 border-black">Go Second</button>
+            </div>
+            <div id="cont" class="hidden"> 
+                <a class="inline-block px-10 py-7 shadow-lg rounded-lg bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-0.5 transform transition text-white uppercase tracking-wider font-semibold text-sm sm:text-base" href="./singlePlayerGame.html">Continue</a>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/singlePlayerName.js"></script>
+</body>
+</html>
+    
