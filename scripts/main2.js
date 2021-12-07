@@ -22,8 +22,9 @@ const score2 = document.getElementById("score2");
 const reset = document.getElementById("reset");
 
 //variable for keeping track of turns
-// let turn = localStorage.getItem('turn');
-let turn =0;
+let turn =  localStorage.getItem('turn') === '0' ? 0 : 1
+
+
 //winning cases
 const cases = "012345678036147258048246";
 
@@ -48,8 +49,7 @@ function turnInit(){
 //reset functionality
 reset.onclick = function(){
     win=0;
-    //turn=localStorage.getItem('turn');
-    turn=0;
+    let turn =  localStorage.getItem('turn') === '0' ? 0 : 1
     teller[0].textContent = "Your Turn";
     teller[1].textContent = "Your Turn";
 
@@ -128,11 +128,6 @@ blocks[0].addEventListener('click',function(){
         turn=0;
     }
     blocks[0].style.pointerEvents = 'none';
-    // console.log(localStorage.getItem('sym1'));
-    // console.log(localStorage.getItem('sym2'));
-    // console.log(sym1);
-    // console.log(sym2);
-    // console.log(turn);
     check();
 });
 

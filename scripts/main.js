@@ -9,6 +9,14 @@ let player2_name = ''
 let player1_sym = ''
 let player2_sym = ''
 
+let playerTurn = ''
+
+const first1 =document.getElementById("first1")
+const second1 =document.getElementById("second1")
+
+const first2 =document.getElementById("first2")
+const second2 =document.getElementById("second2")
+
 window.onload = function(){
     localStorage.clear()
 }
@@ -65,12 +73,50 @@ btn[3].onclick=function(){
 };
 
 
+first1.onclick = () =>{
+    first1.className = 'text-white text-4xl p-2 font-semibold bg-red-500 w-36 hover:bg-red-400 border-4 border-black border-yellow-200'
+    second1.className = 'text-white text-4xl p-2 font-semibold bg-blue-500 w-36 hover:bg-blue-400 border-4 border-black'
+    first2.className = 'text-white text-4xl p-2 font-semibold bg-red-500 w-36 hover:bg-red-400 border-4 border-black '
+    second2.className = 'text-white text-4xl p-2 font-semibold bg-blue-500 w-36 hover:bg-blue-400 border-4 border-black border-yellow-200'
+    playerTurn = '0'
+    check()
+}
+
+
+second1.onclick = () =>{
+    first1.className = 'text-white text-4xl p-2 font-semibold bg-red-500 w-36 hover:bg-red-400 border-4 border-black '
+    second1.className = 'text-white text-4xl p-2 font-semibold bg-blue-500 w-36 hover:bg-blue-400 border-4 border-black border-yellow-200'
+    first2.className = 'text-white text-4xl p-2 font-semibold bg-red-500 w-36 hover:bg-red-400 border-4 border-black border-yellow-200'
+    second2.className = 'text-white text-4xl p-2 font-semibold bg-blue-500 w-36 hover:bg-blue-400 border-4 border-black '
+    playerTurn = '1'
+    check()
+}
+
+first2.onclick = () =>{
+    first1.className = 'text-white text-4xl p-2 font-semibold bg-red-500 w-36 hover:bg-red-400 border-4 border-black '
+    second1.className = 'text-white text-4xl p-2 font-semibold bg-blue-500 w-36 hover:bg-blue-400 border-4 border-black border-yellow-200'
+    first2.className = 'text-white text-4xl p-2 font-semibold bg-red-500 w-36 hover:bg-red-400 border-4 border-black border-yellow-200'
+    second2.className = 'text-white text-4xl p-2 font-semibold bg-blue-500 w-36 hover:bg-blue-400 border-4 border-black'
+    playerTurn = '1'
+    check()
+}
+
+second2.onclick = () =>{
+    first1.className = 'text-white text-4xl p-2 font-semibold bg-red-500 w-36 hover:bg-red-400 border-4 border-black border-yellow-200'
+    second1.className = 'text-white text-4xl p-2 font-semibold bg-blue-500 w-36 hover:bg-blue-400 border-4 border-black '
+    first2.className = 'text-white text-4xl p-2 font-semibold bg-red-500 w-36 hover:bg-red-400 border-4 border-black '
+    second2.className = 'text-white text-4xl p-2 font-semibold bg-blue-500 w-36 hover:bg-blue-400 border-4 border-black border-yellow-200'
+    playerTurn = '0'
+    check()
+}
+
 const check = () =>{
-    if(player1_name !== '' && player2_name !== '' && player1_sym !=='' && player2_sym !==''){
+    if(player1_name !== '' && player2_name !== '' && player1_sym !=='' && player2_sym !=='' && playerTurn !== '' ){
         cont.className = ''
         localStorage.setItem('player1',player1_name)
         localStorage.setItem('player2',player2_name)
         localStorage.setItem('sym1',player1_sym)
         localStorage.setItem('sym2',player2_sym)
+        localStorage.setItem('turn',playerTurn)
     }
 }
