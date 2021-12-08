@@ -7,13 +7,18 @@ A simple Tic-Tac-Toe game made using HTML , Vanilla JS and Tailwind CSS framewor
 
 The game's first page is a main menu which gives the user options to choose whether he wants to play a single player game or two player game .
 
+- Players can enter their names .
+- Score system is in place .
+- Choices for the players to 'Go First' or 'Go Second'
+- In game buttons are present : Reset , Restart and Menu .
+
 ### Single Player Mode
 
 In single player mode the player can play against a never losing bot . The moves of the bot are determined using the minimax algorithm .
 
 ### Two Player Mode
 
-This mode is in working condition . Here the user can compete with his friends and the flow of the game is turn based .
+Here the user can play with his friends and the flow of the game is turn based .
 
 
 ### Instructions
